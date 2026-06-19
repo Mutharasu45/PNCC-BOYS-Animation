@@ -1,0 +1,215 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+}
+
+/* Header Animation */
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 50px;
+    background:darkcyan;
+    animation:slideDown 1s ease;
+}
+
+@keyframes slideDown{
+    from{
+        opacity:0;
+        transform:translateY(-50px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo img{
+    width:60px;
+    height:60px;
+    transition:0.5s;
+}
+
+.logo img:hover{
+    transform:rotate(360deg);
+}
+
+.logo h3{
+    color:white;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav ul li{
+    margin:0 15px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    font-size:18px;
+    position:relative;
+}
+
+nav ul li a::after{
+    content:"";
+    width:0;
+    height:2px;
+    background:yellow;
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    transition:0.5s;
+}
+
+nav ul li a:hover::after{
+    width:100%;
+}
+
+.btn{
+    padding:10px 20px;
+    border:none;
+    background:orange;
+    color:white;
+    border-radius:5px;
+    cursor:pointer;
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.1);}
+    100%{transform:scale(1);}
+}
+
+/* Hero Section */
+.hero{
+    height:100vh;
+    background:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWaKK_vLp_qQDK6uyLzjF9YQzf_PueOjDx0knJAvkJxw&s=10");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    animation:bgZoom 8s infinite alternate;
+}
+
+@keyframes bgZoom{
+    from{
+        background-size:100%;
+    }
+    to{
+        background-size:120%;
+    }
+}
+
+.content{
+    animation:zoomIn 2s ease;
+}
+
+@keyframes zoomIn{
+    from{
+        opacity:0;
+        transform:scale(0.5);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+.content h1{
+    color:white;
+    font-size:50px;
+}
+
+.content p{
+    color:white;
+    font-size:20px;
+}
+
+/* Cards */
+.cricket-section{
+    padding:50px;
+    text-align:center;
+    background:wheat;
+}
+
+.container{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+.card{
+    width:250px;
+    padding:20px;
+    background:brown;
+    border-radius:10px;
+    color:white;
+    transition:0.5s;
+    animation:fadeUp 1s ease;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.card:hover{
+    transform:translateY(-15px) scale(1.05);
+    box-shadow:0 10px 20px rgba(0,0,0,0.5);
+}
+
+.card img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    border-radius:10px;
+    transition:0.5s;
+}
+
+.card img:hover{
+    transform:scale(1.1);
+}
+
+/* Footer */
+footer{
+    background:black;
+    color:white;
+    text-align:center;
+    padding:20px;
+    animation:fadeIn 2s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
